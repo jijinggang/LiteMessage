@@ -14,21 +14,21 @@ LiteMessage
 消息定义示例
 --------
 
-  message VoUser{
+	message VoUser{
 	  string name
 	  int64 exp
 	  int32 level
-  }
-  
-  message CSLogin = 12001 
-  {
+	}
+	
+	message CSLogin = 12001 
+	{
 	  string name  = "" //用户名
 	  string password
-  }
-  
-  message SCLogin = 12002
-  {
+	}
+	
+	message SCLogin = 12002
+	{
 	  byte result
 	  VoUser[] userInfo
-  }
-  
+	}
+
