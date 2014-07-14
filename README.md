@@ -8,11 +8,12 @@ LiteMessage
 - string
 - bool/byte/int16/int32/int64
 - float/double
-- array
 - 嵌套自定义类型
+- 以上各种类型的数组
 
 消息定义示例
 --------
+
   message VoUser{
 	  string name
 	  int64 exp
@@ -30,3 +31,4 @@ LiteMessage
 	  byte result
 	  VoUser[] userInfo
   }
+  
