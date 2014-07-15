@@ -1,0 +1,18 @@
+	message VoUser
+	{
+	  string name
+	  int64 exp
+	  int32 level
+	}
+	//登录消息
+	message CSLogin = 12001 
+	{
+	  string name  = null //名字
+	  string password
+	}
+	
+	message SCLogin = 12002
+	{
+	  byte result
+	  VoUser[] userInfo
+	}
