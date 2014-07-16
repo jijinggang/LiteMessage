@@ -1,0 +1,24 @@
+using System;
+namespace litemessage{
+{{range .}}	
+	public class {{.Name}} {
+		public static int MSGID = {{.Msgid}};
+	{{range .Fields}}
+		public {{.Type}} {{.Name}};
+	{{end}}
+		public void Write(ByteBuffer ba){
+			if(MSGID != 0) ba.WriteInt32(MSGID);
+	{{range .Fields}}
+			ba.Write{{.Type }}({{.Name}});
+	{{end}}	
+		}
+		public void Read(ByteBuffer ba){
+			//if(MSGID != 0) ba.ReadInt32(MSGID);
+	{{range .Fields}}
+			{{.Name}} = ba.Read{{.Type }}();
+	{{end}}	
+		}
+	}
+{{end}}
+	
+}

@@ -7,7 +7,7 @@
 	//登录消息
 	message CSLogin = 12001 
 	{
-	  string name  = null //名字
+	  string name //名字
 	  string password
 	}
 	
@@ -16,3 +16,11 @@
 	  byte result
 	  VoUser[] userInfo
 	}
+	
+	// | len  | msgid | mask| data
+	// -------------------------------------------------------
+	// | 4byte| 3byte |1byte| .....
+	// string utf8
+	// number little-endidan
+	// object : 1byte mask | data
+	// bool = byte
